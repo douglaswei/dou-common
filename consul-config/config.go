@@ -9,6 +9,7 @@ import (
 
 var (
     ConsulPath string = "go/proj_init"
+    ConsulUrl string = "consul.url"
 )
 
 func GetConfig() *config.Config {
