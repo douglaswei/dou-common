@@ -7,7 +7,9 @@ import (
     "log"
 )
 
-var consulPath string = "go/proj_init"
+var (
+    ConsulPath string = "go/proj_init"
+)
 
 func GetConfig() *config.Config {
     consulAddress := config.Getenv("consulAddress", "consul-dev:8500")
@@ -25,7 +27,7 @@ func GetConfigByAddress(consulAddress string) *config.Config {
         log.Fatalln("consul连接失败:", err)
     }
 
-    kv, _, err := consulClient.KV().Get(consulPath, nil)
+    kv, _, err := consulClient.KV().Get(ConsulPath, nil)
     if err != nil {
         log.Fatalln("consul获取配置失败:", err)
     }
