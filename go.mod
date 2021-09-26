@@ -1,4 +1,4 @@
-module dou.go.common
+module github.com/dou.go.common
 
 go 1.16
 
