@@ -19,6 +19,7 @@ func GetConfig() *config.Config {
 
 func GetConfigByAddress(consulAddress string) *config.Config {
     config.AddDriver(yaml.Driver)
+    
     dftCfg := config.Default()
 
     consulClient, err := consulapi.NewClient(&consulapi.Config{Address: consulAddress})
