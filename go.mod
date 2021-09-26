@@ -1,4 +1,4 @@
-module github.com/douglas/go-common
+module github.com/douglaswei/go-common
 
 go 1.16
 
