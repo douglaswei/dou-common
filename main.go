@@ -1,7 +1,7 @@
 package main
 
 import (
-    consul_config "github.com/douglas/go-common/consul-config"
+    consul_config "github.com/douglaswei/go-common/consul-config"
     "fmt"
 )
 
