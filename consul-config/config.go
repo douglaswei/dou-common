@@ -12,12 +12,16 @@ var (
     ConsulUrl string = "consul.url"
 )
 
-func GetConfig() *config.Config {
-    consulAddress := config.Getenv("consulAddress", "consul-dev:8500")
-    return GetConfigByAddress(consulAddress)
+func GetDftConfig() *config.Config {
+    return GetConfig(ConsulPath)
 }
 
-func GetConfigByAddress(consulAddress string) *config.Config {
+func GetConfig(path string) *config.Config {
+    consulAddress := config.Getenv("consulAddress", "consul-dev:8500")
+    return GetConfigByAddress(consulAddress, path)
+}
+
+func GetConfigByAddress(consulAddress string, path string) *config.Config {
     config.AddDriver(yaml.Driver)
     dftCfg := config.Default()
     consulClient, err := consulapi.NewClient(&consulapi.Config{Address: consulAddress})
