@@ -8,7 +8,7 @@ import (
 )
 
 var (
-    ConsulPath string = "go/proj_init"
+    ConsulPath string = "go/ProjInit"
     ConsulUrl string = "consul.url"
 )
 
